@@ -16,7 +16,7 @@ public class HeaderController {
 
     @GetMapping
     public String getHeaders(@RequestHeader HttpHeaders headers){
-        return headers.getHost().getHostName() + headers.getHost().getPort();
+        return headers.getHost().getHostName() + " " + headers.getHost().getPort();
     }
     
     // @GetMapping
