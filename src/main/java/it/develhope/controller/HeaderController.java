@@ -15,10 +15,15 @@ import java.util.Map;
 public class HeaderController {
 
     @GetMapping
-    public Map<String, String> getHeaders(@RequestHeader HttpHeaders headers) {
-        Map<String, String> headerMap = new HashMap<>();
-        headerMap.put("hostName", headers.getHost().getHostName());
-        headerMap.put("hostPort", headers.getHost().getPort()+"");
-        return headerMap;
+    public String getHeaders(@RequestHeader HttpHeaders headers){
+        return headers.getHost().getHostName() + headers.getHost().getPort();
     }
+    
+    // @GetMapping
+    // public Map<String, String> getHeaders(@RequestHeader HttpHeaders headers) {
+    //     Map<String, String> headerMap = new HashMap<>();
+    //     headerMap.put("hostName", headers.getHost().getHostName());
+    //     headerMap.put("hostPort", headers.getHost().getPort()+"");
+    //     return headerMap;
+    // }
 }
